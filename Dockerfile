@@ -19,7 +19,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y bind9 bind9-host
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y webmin
 
-RUN apt-get install -y dnsutils net-tools nano
+RUN apt-get install -y dnsutils net-tools
 
 RUN rm -rf /var/lib/apt/lists/*
 
