@@ -1,4 +1,4 @@
-FROM debian:sid-slim
+FROM debian:stretch-slim
 MAINTAINER meti@lplab.net
 
 ENV BIND_USER=bind \
