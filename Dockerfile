@@ -1,5 +1,8 @@
 FROM alpine
-MAINTAINER meti@lplab.net
+
+LABEL maintainer="meti@lplab.net" \
+      version="0.9b" \
+      description="Caching DNS resolver for a local LAN. Based on Alpine and dnscache from D. J. Bernstein"
 
 ENV DATA_DIR=/data
 
