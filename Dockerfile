@@ -5,7 +5,7 @@ ENV BIND_USER=bind \
     DATA_DIR=/data
 
 RUN apk update && \
-    apk add wget gnupg procps less ca-certificates acf-dnscache
+    apk add wget gnupg procps less ca-certificates acf-core acf-dnscache
 
 RUN /sbin/setup-acf
 
