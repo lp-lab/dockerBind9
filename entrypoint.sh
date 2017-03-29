@@ -16,9 +16,7 @@ set_root_passwd() {
 }
 
 # default behaviour is to launch named
-if [[ -z ${1} ]]; then
-    set_root_passwd
-  fi
+set_root_passwd
 
   echo "Starting dnscache..."
   exec /usr/bin/dnscache < /dev/urandom
