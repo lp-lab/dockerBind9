@@ -21,7 +21,7 @@ if [[ -z ${1} ]]; then
   fi
 
   echo "Starting dnscache..."
-  exec $(which dnscache)
+  exec /usr/bin/dnscache
 else
   exec "$@"
 fi
