@@ -5,10 +5,10 @@ ENV BIND_USER=bind \
     DATA_DIR=/data
 
 RUN apk update && \
-    apk add wget gnupg procps less ca-certificates acf-core acf-dnscache
+    apk add wget gnupg procps less ca-certificates acf-core acf-dnscache alpine-conf
 
-COPY setup-acf.sh /sbin/setup-acf
-RUN chmod 755 /sbin/setup-acf
+#COPY setup-acf.sh /sbin/setup-acf
+#RUN chmod 755 /sbin/setup-acf
 
 RUN /sbin/setup-acf
 
