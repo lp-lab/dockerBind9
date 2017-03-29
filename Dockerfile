@@ -4,7 +4,8 @@ MAINTAINER meti@lplab.net
 ENV BIND_USER=bind \
     DATA_DIR=/data
 
-RUN apk add wget gnupg procps less ca-certificates acf-dnscache
+RUN apk update && \
+    apk add wget gnupg procps less ca-certificates acf-dnscache
 
 RUN setup-acf
 
