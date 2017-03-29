@@ -12,6 +12,7 @@ RUN /sbin/setup-acf
 
 RUN rm /etc/dnscache/ip/127 && \
     touch /etc/dnscache/ip/10.1.2 && \
+    touch /etc/dnscache/ip/172.17.0 && \
     sed -i 's/IP=127.0.0.1/IP=0.0.0.0/g' /etc/conf.d/dnscache
 
 COPY entrypoint.sh /sbin/entrypoint.sh
