@@ -4,7 +4,7 @@ MAINTAINER meti@lplab.net
 ENV DATA_DIR=/data
 
 RUN apk update && \
-    apk add wget gnupg procps less ca-certificates acf-core acf-dnscache alpine-conf
+    apk add wget gnupg procps less ca-certificates acf-core acf-dnscache alpine-conf dnscache
 
 RUN echo -n root:test123 | chpasswd
 
@@ -20,4 +20,3 @@ RUN chmod 755 /sbin/entrypoint.sh
 EXPOSE 53/udp 53/tcp 10000/tcp
 VOLUME ["${DATA_DIR}"]
 ENTRYPOINT ["/sbin/entrypoint.sh"]
-CMD ["/usr/bin/dnscache"]
