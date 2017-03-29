@@ -1,27 +1,16 @@
-FROM debian:sid-slim
+FROM alpine
 MAINTAINER meti@lplab.net
 
 ENV BIND_USER=bind \
     DATA_DIR=/data
 
-RUN rm -rf /etc/apt/apt.conf.d/docker-gzip-indexes \
- && apt-get update
+RUN apk add wget gnupg procps less ca-certificates acf-dnscache
 
-RUN apt-get -y dist-upgrade
+RUN setup-acf
 
-RUN apt-get install -y wget gnupg procps busybox less
-
-RUN wget http://www.webmin.com/jcameron-key.asc -qO - | apt-key add - \
- && echo "deb http://download.webmin.com/download/repository sarge contrib" >> /etc/apt/sources.list \
- && apt-get update
-
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y bind9 bind9-host
-
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y webmin
-
-RUN apt-get install -y dnsutils net-tools
-
-RUN rm -rf /var/lib/apt/lists/*
+RUN rm /etc/dnscache/ip/127 && \
+    touch /etc/dnscache/ip/10.1.2 && \
+    sed -i 's/IP=127.0.0.1/IP=0.0.0.0/g' /etc/conf.d/dnscache
 
 COPY entrypoint.sh /sbin/entrypoint.sh
 RUN chmod 755 /sbin/entrypoint.sh
