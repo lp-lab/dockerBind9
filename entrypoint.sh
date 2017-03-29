@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 set -e
 
 ROOT_PASSWORD=${ROOT_PASSWORD:-password}
