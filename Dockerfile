@@ -7,7 +7,7 @@ ENV BIND_USER=bind \
 RUN apk update && \
     apk add wget gnupg procps less ca-certificates acf-dnscache
 
-RUN setup-acf
+RUN /sbin/setup-acf
 
 RUN rm /etc/dnscache/ip/127 && \
     touch /etc/dnscache/ip/10.1.2 && \
