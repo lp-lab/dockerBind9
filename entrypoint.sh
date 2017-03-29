@@ -18,6 +18,10 @@ set_root_passwd() {
 # default behaviour is to launch named
 set_root_passwd
 
+/usr/bin/acfpasswd -s root
+
+/usr/sbin/mini_httpd -C /etc/mini_httpd/mini_httpd.conf
+
   echo "Starting dnscache..."
   exec /usr/bin/dnscache < /dev/urandom
 else
