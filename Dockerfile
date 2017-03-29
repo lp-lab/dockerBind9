@@ -1,8 +1,7 @@
 FROM alpine
 MAINTAINER meti@lplab.net
 
-ENV BIND_USER=bind \
-    DATA_DIR=/data
+ENV DATA_DIR=/data
 
 RUN apk update && \
     apk add wget gnupg procps less ca-certificates acf-core acf-dnscache alpine-conf
@@ -21,4 +20,4 @@ RUN chmod 755 /sbin/entrypoint.sh
 EXPOSE 53/udp 53/tcp 10000/tcp
 VOLUME ["${DATA_DIR}"]
 ENTRYPOINT ["/sbin/entrypoint.sh"]
-CMD ["/usr/sbin/named"]
+CMD ["/usr/bin/dnscache"]

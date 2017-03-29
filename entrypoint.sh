@@ -21,7 +21,7 @@ if [[ -z ${1} ]]; then
   fi
 
   echo "Starting dnscache..."
-  exec /usr/bin/dnscache
+  exec /usr/bin/dnscache < /dev/urandom
 else
   exec "$@"
 fi
