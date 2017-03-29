@@ -7,8 +7,7 @@ ENV BIND_USER=bind \
 RUN apk update && \
     apk add wget gnupg procps less ca-certificates acf-core acf-dnscache alpine-conf
 
-RUN adduser root -h /root -u 0 && \
-    echo -n root:test123 | chpasswd
+RUN echo -n root:test123 | chpasswd
 
 RUN /sbin/setup-acf
 
