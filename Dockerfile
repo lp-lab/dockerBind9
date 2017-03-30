@@ -1,5 +1,8 @@
 FROM debian:stretch-slim
-MAINTAINER meti@lplab.net
+
+LABEL maintainer="github@lplab.net" \
+      version="0.9b" \
+      description="Caching DNS resolver for a local LAN. Based on Debian Sid and Bind 9"
 
 ENV BIND_USER=bind \
     DATA_DIR=/data
