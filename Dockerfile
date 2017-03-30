@@ -1,6 +1,6 @@
 FROM debian:sid-slim
 
-LABEL maintainer="meti@lplab.net" \
+LABEL maintainer="github@lplab.net" \
       version="0.9b" \
       description="Caching DNS resolver for a local LAN. Based on Debian Sid and Bind 9"
 
