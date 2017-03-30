@@ -1,6 +1,6 @@
 FROM alpine
 
-LABEL maintainer="meti@lplab.net" \
+LABEL maintainer="github@lplab.net" \
       version="0.9b" \
       description="Caching DNS resolver for a local LAN. Based on Alpine and dnscache from D. J. Bernstein"
 
