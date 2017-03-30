@@ -1,5 +1,8 @@
 FROM debian:sid-slim
-MAINTAINER meti@lplab.net
+
+LABEL maintainer="meti@lplab.net" \
+      version="0.9b" \
+      description="Caching DNS resolver for a local LAN. Based on Debian Sid and Bind 9"
 
 ENV BIND_USER=bind \
     DATA_DIR=/data
