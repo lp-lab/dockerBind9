@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:edge
 
 LABEL maintainer="github@lplab.net" \
       version="1.0.1-rc1" \
