@@ -19,7 +19,7 @@ RUN rm -rf /etc/dnscache
 
 RUN dnscache-conf dnscache dnscache /etc/dnscache 0.0.0.0
 
-RUN sed -i 's/exec <seed/exec </dev/urandom/g' /etc/dnscache/run
+RUN sed -i 's/exec\ <seed/exec\ \<\/dev\/urandom/g' /etc/dnscache/run
 
 RUN rm /etc/dnscache/root/ip/127.0.0.1 && \
     touch /etc/dnscache/root/ip/10.1.2 && \
