@@ -1,7 +1,7 @@
 FROM alpine
 
 LABEL maintainer="github@lplab.net" \
-      version="0.9b" \
+      version="1.0.0" \
       description="Caching DNS resolver for a local LAN. Based on Alpine and dnscache from D. J. Bernstein"
 
 ENV DATA_DIR=/data
