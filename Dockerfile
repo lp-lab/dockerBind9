@@ -15,6 +15,8 @@ RUN /sbin/setup-acf
 
 COPY dnsroots.global /etc/dnsroots.global
 
+RUN rm -rf /etc/dnscache
+
 RUN dnscache-conf dnscache dnscache /etc/dnscache 0.0.0.0
 
 RUN rm /etc/dnscache/root/ip/127.0.0.1 && \
