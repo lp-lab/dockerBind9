@@ -15,11 +15,13 @@ set_root_passwd() {
   echo "root:$ROOT_PASSWORD" | chpasswd
 }
 
-# default behaviour is to launch named
+# Set root password from the commandline
 set_root_passwd
 
+# Synchronize acf root password from system's one
 /usr/bin/acfpasswd -s root
 
+# Start mini_httpd to serve acf on https
 /usr/sbin/mini_httpd -C /etc/mini_httpd/mini_httpd.conf
 
   echo "Starting dnscache..."
