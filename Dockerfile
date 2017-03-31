@@ -7,7 +7,7 @@ LABEL maintainer="github@lplab.net" \
 ENV DATA_DIR=/data
 
 RUN apk update && \
-    apk add wget gnupg procps less ca-certificates acf-core acf-dnscache alpine-conf dnscache
+    apk add wget gnupg procps less ca-certificates acf-core acf-dnscache alpine-conf dnscache daemontools
 
 RUN echo -n root:test123 | chpasswd
 
