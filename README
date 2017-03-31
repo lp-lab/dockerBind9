@@ -2,4 +2,4 @@ Alpine/dnscache based image.
 
 Run:
 
-docker run --name bind -d --restart=always   --publish <ip>:53:53/tcp --publish <ip>:53:53/udp --publish <ip>:443:443/tcp --volume /srv/docker/bind:/data --env ROOT_PASSWORD=<password> lplab/dockerdns:alpine_dev
+docker run --name bind -d --restart=always   --publish <ip>:53:53/tcp --publish <ip>:53:53/udp --publish <ip>:443:443/tcp --volume /srv/docker/bind:/data --env ROOT_PASSWORD=<password> lplab/dockerdns:latest
