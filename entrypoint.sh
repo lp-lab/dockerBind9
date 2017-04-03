@@ -16,6 +16,10 @@ update_datalimit() {
   echo "$DATALIMIT" > /etc/dnscache/env/DATALIMIT
 }
 
+update_timezone() {
+  echo "$TIMEZONE" > /etc/timezone
+}
+
 # Set root password from the commandline
 set_root_passwd
 
@@ -26,11 +30,15 @@ set_root_passwd
 /usr/sbin/mini_httpd -C /etc/mini_httpd/mini_httpd.conf
 
 if [[ -n $CACHESIZE ]]; then
-	update_cachesize
+  update_cachesize
 fi
 
 if [[ -n $DATALIMIT ]]; then
-	update_datalimit
+  update_datalimit
+fi
+
+if [[ -n $TIMEZONE ]]; then
+  update_timezone
 fi
 
 echo "Starting dnscache..."
