@@ -24,10 +24,10 @@ RUN dnscache-conf dnscache dnscache /etc/dnscache 0.0.0.0
 RUN sed -i 's/exec\ <seed/exec\ \<\/dev\/urandom/g' /etc/dnscache/run && \
     sed -i -- "s/exec envdir .\/env sh \-c '/exec envdir \/etc\/dnscache\/env sh \-c '/g" /etc/dnscache/run
 
-RUN rm /etc/dnscache/root/ip/127.0.0.1 && \
-    touch /etc/dnscache/root/ip/10 && \
-    touch /etc/dnscache/root/ip/192.168 && \
-    touch /etc/dnscache/root/ip/172.{16..31}
+#RUN rm /etc/dnscache/root/ip/127.0.0.1 && \
+#    touch /etc/dnscache/root/ip/10 && \
+#    touch /etc/dnscache/root/ip/192.168 && \
+#    touch /etc/dnscache/root/ip/172.{16..31}
 #    sed -i 's/IP=127.0.0.1/IP=0.0.0.0/g' /etc/conf.d/dnscache
 
 RUN apk add --update tini
