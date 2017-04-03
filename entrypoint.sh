@@ -2,7 +2,7 @@
 set -e
 
 ROOT_PASSWORD=${ROOT_PASSWORD:-password}
-DATE=`date +%Y%m%d`-`date +%H%M`
+DATE=$(date +%Y%m%d)-$(date +%H%M)
 
 set_root_passwd() {
   echo "root:$ROOT_PASSWORD" | chpasswd
@@ -33,8 +33,5 @@ if [[ -n $DATALIMIT ]]; then
 	update_datalimit
 fi
 
-  echo "Starting dnscache..."
-  exec /etc/dnscache/run > /data/log/dnscache-$DATE.log
-else
-  exec "$@"
-fi
+echo "Starting dnscache..."
+exec /etc/dnscache/run > /data/log/dnscache-"$DATE".log
