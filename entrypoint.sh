@@ -2,16 +2,7 @@
 set -e
 
 ROOT_PASSWORD=${ROOT_PASSWORD:-password}
-#CACHESIZE=${CACHESIZE:-size}
-#DATALIMIT=${DATALIMIT:-limit}
-#export UID=$(id -u dnscache)
-#export GID=$(id -g dnscache)
-#export ROOT=/etc/dnscache
-#export IP=0.0.0.0
-#export IPSEND=0.0.0.0
-#export CACHESIZE=1000000
-#DAEMON=/usr/bin/dnscache
-#PIDFILE=/var/run/dnscache.pid
+DATE=`date +%Y%m%d`-`date +%H%M`
 
 set_root_passwd() {
   echo "root:$ROOT_PASSWORD" | chpasswd
@@ -43,7 +34,7 @@ if [[ -n $DATALIMIT ]]; then
 fi
 
   echo "Starting dnscache..."
-  exec /etc/dnscache/run > /data/log/dnscache.log
+  exec /etc/dnscache/run > /data/log/dnscache-$DATE.log
 else
   exec "$@"
 fi
