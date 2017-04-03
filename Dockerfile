@@ -9,7 +9,7 @@ ENV DATA_DIR=/data
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
 
 RUN apk update && \
-    apk add wget gnupg procps less ca-certificates acf-core acf-dnscache alpine-conf dnscache daemontools
+    apk add wget gnupg procps less ca-certificates acf-core acf-dnscache alpine-conf dnscache daemontools bash
 
 RUN echo -n root:test123 | chpasswd
 
