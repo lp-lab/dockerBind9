@@ -1,1 +1,10 @@
-docker run --name bind -d --restart=always --publish 53:53/tcp --publish 53:53/udp --publish 10000:10000/tcp --volume /srv/docker/bind:/data lplab2/dockerbind9:latest
+#!/bin/bash
+
+docker run --name bind -d --restart=always \
+  --publish <ip>:53:53/tcp \
+  --publish <ip>:53:53/udp \
+  --publish <ip>:10000:10000/tcp \
+  --volume /srv/docker/bind:/data \
+  -v /srv/docker/bind/bindlog:/var/log/named \
+  --env ROOT_PASSWORD=<password> \
+  lplab/dockerdns:latest -g -4
