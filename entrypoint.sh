@@ -43,7 +43,7 @@ if [[ -n $DATALIMIT ]]; then
 fi
 
   echo "Starting dnscache..."
-  exec /etc/dnscache/run
+  exec /etc/dnscache/run > /var/log/dnscache.log
 else
   exec "$@"
 fi
