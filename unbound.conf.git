@@ -1,0 +1,80 @@
+
+server:
+
+	verbosity: 1
+
+	statistics-interval: 600
+
+	statistics-cumulative: no
+
+	do-ip4: yes
+
+	do-ip6: yes
+
+	do-udp: yes
+
+	do-tcp: yes
+
+	do-daemonize: yes
+
+	access-control: 10.0.0.0/8 allow
+	access-control: 192.168.0.0/16 allow
+	access-control: 172.16.0.0/12 allow
+
+	username: "unbound"
+
+	use-syslog: yes
+
+	log-time-ascii: no
+
+	pidfile: "/var/run/unbound/unbound.pid"
+
+	root-hints: /etc/unbound/root.hints
+
+	hide-identity: yes
+
+	hide-version: yes
+
+	harden-short-bufsize: yes
+
+	harden-large-queries: yes
+
+	harden-glue: yes
+
+	harden-dnssec-stripped: yes
+
+	harden-algo-downgrade: yes
+
+	qname-minimisation: yes
+
+	use-caps-for-id: yes
+
+	private-address: 10.0.0.0/8
+	private-address: 172.16.0.0/12
+	private-address: 192.168.0.0/16
+	private-address: 169.254.0.0/16
+	private-address: fd00::/8
+	private-address: fe80::/10
+	private-address: ::ffff:0:0/96
+
+	private-domain: "lplab.net"
+
+	unwanted-reply-threshold: 10000000
+
+	do-not-query-address: 127.0.0.1/8
+	do-not-query-address: ::1
+
+	do-not-query-localhost: yes
+
+	prefetch: yes
+
+	prefetch-key: yes
+
+	minimal-responses: no
+
+	trust-anchor-file: "/usr/share/dnssec-root/trusted-key.key"
+
+python:
+
+remote-control:
+
