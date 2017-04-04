@@ -22,8 +22,10 @@ server:
 	access-control: 172.16.0.0/12 allow
 
 	username: "unbound"
+	
+	logfile: "/data/log/unbound.log"
 
-	use-syslog: yes
+	use-syslog: no
 
 	log-time-ascii: no
 
