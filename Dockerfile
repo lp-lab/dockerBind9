@@ -13,7 +13,7 @@ RUN apk update && \
     apk add wget gnupg procps less ca-certificates acf-core acf-unbound alpine-conf unbound bash
 
 # Use a dummy root password, will be changed at container startup via CLI
-#RUN echo -n root:test123 | chpasswd
+RUN echo -n root:test123 | chpasswd
 
 RUN /sbin/setup-acf && \
     rm -f /etc/unbound/unbound.conf

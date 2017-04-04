@@ -2,7 +2,6 @@
 set -e
 
 ROOT_PASSWORD=${ROOT_PASSWORD:-password}
-DATE=$(date +%Y%m%d)-$(date +%H%M)
 
 set_root_passwd() {
   echo "root:$ROOT_PASSWORD" | chpasswd
@@ -26,4 +25,4 @@ if [[ -n $TIMEZONE ]]; then
 fi
 
 echo "Starting unbound..."
-exec /usr/sbin/unbound -- -c /etc/unbound/unbound.conf
+exec /usr/sbin/unbound
