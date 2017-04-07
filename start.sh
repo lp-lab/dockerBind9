@@ -7,4 +7,4 @@ docker run --name dnsalpine -d --restart=always --publish <ip>:53:53/tcp \
   --volume /srv/docker/alpinedns:/data \
   --env ROOT_PASSWORD=<password> \
   --env TIMEZONE="<your/timezone>" \
-  lplab/dockerdns:alpine_unbound
+  lplab/dockerdns:latest
