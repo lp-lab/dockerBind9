@@ -24,5 +24,7 @@ if [[ -n $TIMEZONE ]]; then
   update_timezone
 fi
 
+chown unbound /data
+
 echo "Starting unbound..."
 exec /usr/sbin/unbound

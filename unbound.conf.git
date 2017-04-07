@@ -16,6 +16,9 @@ server:
 	do-tcp: yes
 
 	do-daemonize: no
+	
+	interface: 0.0.0.0
+	interface: ::0
 
 	access-control: 10.0.0.0/8 allow
 	access-control: 192.168.0.0/16 allow
