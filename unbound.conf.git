@@ -16,6 +16,11 @@ server:
 	do-tcp: yes
 
 	do-daemonize: no
+
+        rrset-cache-size: 150m
+        msg-cache-size: 75m
+	so-reuseport: yes
+
 	
 	interface: 0.0.0.0
 	interface: ::0
