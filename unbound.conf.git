@@ -89,7 +89,8 @@ python:
 remote-control:
 	control-enable: yes
 
-	control-interface: 127.0.0.1
+	control-use-cert: no
 
+	control-interface: /tmp/unbound-control
 	control-port: 8953
 
