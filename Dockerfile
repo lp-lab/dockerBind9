@@ -1,7 +1,7 @@
 FROM alpine:edge
 
 LABEL maintainer="github@lplab.net" \
-      version="1.0.5" \
+      version="1.0.6" \
       description="Caching DNS resolver for a local LAN. Based on Alpine and Unbound"
 
 ENV DATA_DIR=/data
