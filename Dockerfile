@@ -10,6 +10,7 @@ ENV DATA_DIR=/data
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
 
 RUN apk update && \
+    apk upgrade && \
     apk add wget gnupg procps less ca-certificates acf-core acf-unbound alpine-conf unbound bash
 
 # Use a dummy root password, will be changed at container startup via CLI
